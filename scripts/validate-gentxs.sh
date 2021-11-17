@@ -76,6 +76,8 @@ if [ "$(ls -A $GENTXS_DIR)" ]; then
                 exit 1
             fi
 
+            $DAEMON_HOME/config/genesis.json | jq
+
             $DAEMON add-genesis-account $RANDOM_KEY 1000000000000000$DENOM --home $DAEMON_HOME \
                 --keyring-backend test
 
